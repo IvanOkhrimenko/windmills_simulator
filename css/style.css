@@ -1,0 +1,371 @@
+
+body {
+  background:rgb(157, 225, 240);
+  font-family:Helvetica, Arial, sans-serif;
+  padding:5% 0 0 0;
+  margin:0;
+}
+
+.container {
+  position:relative;
+  width:1000px;
+  margin:0 auto;
+  height:586px;
+  padding:0;
+}
+
+
+.sign {
+  background:#000;
+  clear:both;
+  color:#fff;
+  text-align:center;
+  padding:2.5em 40px 3.5em;
+  margin:0;
+  height: 240px;
+}
+
+.sign h1 {
+  color:#fff;
+
+  font-size:4em;
+  margin:0;
+  letter-spacing:-0.03em;
+}
+
+.sign p {
+  color:#fff;
+  margin:0;
+  font-size:18px;
+}
+
+.stolby {
+  position:absolute;
+  left:200px;
+  top:0;
+  margin-top:18%;
+}
+
+#v1, #v2, #v3, #v4 {
+     animation: 2s motion1 infinite linear;
+   position:absolute;
+    top:0;
+}
+
+#v1 {
+  left:377px; 
+  top:3px;
+
+}
+
+#v2 {
+    left:45px;
+  top:80px;
+-moz-transform: scale(0.7) rotate(0deg);
+-webkit-transform: scale(0.7) rotate(0deg);
+-o-transform: scale(0.7) rotate(0deg);
+-ms-transform: scale(0.7) rotate(0deg);
+transform: scale(0.7) rotate(0deg);
+  animation: 2s motion2 infinite linear;
+}
+
+#v3 {
+  left:510px;
+  top:180px;
+  -moz-transform: scale(0.5) rotate(0deg);
+  -webkit-transform: scale(0.5) rotate(0deg);
+  -o-transform: scale(0.5) rotate(0deg);
+  -ms-transform: scale(0.5) rotate(0deg);
+  transform: scale(0.5) rotate(0deg);
+  animation: 5s motion3 infinite linear;
+  opacity:0.9;
+}
+
+#v4 {
+  left:184px;
+  top:250px;
+  -moz-transform: scale(0.3) rotate(0deg);
+  -webkit-transform: scale(0.3) rotate(0deg);
+  -o-transform: scale(0.3) rotate(0deg);
+  -ms-transform: scale(0.3) rotate(0deg);
+  transform: scale(0.3) rotate(0deg);
+  animation: 2s motion4 infinite linear;
+  opacity:0.7;
+}
+
+#myBar {
+  position: absolute;
+  width: 10%;
+  
+  height: 30px;
+  background-color: #4CAF50;
+  text-align: center; /* To center it horizontally (if you want) */
+  line-height: 30px; /* To center it vertically */
+  color: white; 
+}
+@keyframes motion1 {
+  from {}
+  
+
+  to {
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+
+  }
+}
+
+@keyframes motion2 {
+  from {}
+  
+
+  to {
+  -moz-transform: scale(0.7) rotate(360deg);
+  -webkit-transform: scale(0.7) rotate(360deg);
+  -o-transform: scale(0.7) rotate(360deg);
+  -ms-transform: scale(0.7) rotate(360deg);
+  transform: scale(0.7) rotate(360deg);
+
+  }
+}
+
+@keyframes motion3 {
+  from {}
+  
+
+  to {
+  -moz-transform: scale(0.5) rotate(360deg);
+  -webkit-transform: scale(0.5) rotate(360deg);
+  -o-transform: scale(0.5) rotate(360deg);
+  -ms-transform: scale(0.5) rotate(360deg);
+  transform: scale(0.5) rotate(360deg);
+
+  }
+}
+
+@keyframes motion4 {
+  from {}
+  
+
+  to {
+  -moz-transform: scale(0.3) rotate(360deg);
+  -webkit-transform: scale(0.3) rotate(360deg);
+  -o-transform: scale(0.3) rotate(360deg);
+  -ms-transform: scale(0.3) rotate(360deg);
+  transform: scale(0.3) rotate(360deg);
+
+  }
+}
+
+
+
+.controls {
+  width:290px;
+  height:260px;
+  position: absolute;
+  border-radius: 3px;
+  top:70%;
+  left:15px;
+  background-color: aliceblue;
+
+}
+
+
+
+.loader {
+  position: absolute;
+  top:10%;
+  left: 20px;
+  width: 80px;
+  height: 122px;
+  border: 5px solid #f1f1f1;
+  border-radius: 8px;
+  float:left;
+}
+
+/* .loader:before {
+content:"";
+width:30px;
+height: 15px;
+background-color:#f1f1f1;
+margin-top:-15px;
+margin-left: 25px;
+border: 0px solid #f1f1f1;
+position:absolute;
+border-top-left-radius: 2px;
+border-top-right-radius: 2px;
+} */
+
+.perc {
+border-radius: 2px;
+border:1px solid rgba(200,200,200,0.3);
+float:left;
+margin-top: 2px;
+width:90%;
+height:16px;
+margin-left:3px;
+}
+
+.vis{
+  visibility: visible;
+}
+
+.red0 {
+  visibility: hidden;
+background-color:#ed1b1e;
+}
+
+.red1 {
+  visibility: hidden;
+background-color:#eb6726;
+}
+
+.red2 {
+  visibility: hidden;
+background-color:#f1a51e;
+}
+
+.green0 {
+  visibility: hidden;
+background-color:#fec93b;
+}
+
+.green1 {
+  visibility: hidden;
+background-color:#c1c554;
+}
+
+.green2 {
+  visibility: hidden;
+background-color:#97c03c;
+}
+.controls .batteryStats div{
+  font-family:'Open Sans', sans-serif;
+  color:#eeab3f;
+  font-size:0.7em;
+  text-transform: uppercase;
+  text-align : center;
+  line-height:1.5;
+  letter-spacing: 1px;
+}
+#energy{
+position:absolute;
+float:left;
+margin-top:40px;
+margin-left:115px;
+}
+#capacity{
+position:absolute;
+margin-top:60px;
+margin-left:115px;
+}
+#windspeed{
+position:absolute;
+margin-top:170px;
+margin-left:25px;
+}
+#winddir{
+position:absolute;
+margin-top:190px;
+margin-left:25px;
+}
+#electro{
+position:absolute;
+margin-top:80px;
+margin-left:115px;
+}
+#usage{
+position:absolute;
+margin-top:100px;
+margin-left:115px;
+}
+.drop-window{
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  border: 1px solid red;
+  top:70%;
+  right: 15px; 
+  width:290px;
+  height:260px;
+  background-color: white;
+  opacity: 0.9;
+
+}
+#i-range{
+  direction: rtl;
+}
+input[type="range"] { 
+  margin: auto;
+  -webkit-appearance: none;
+  position: relative;
+  overflow: hidden;
+  height: 40px;
+  width: 200px;
+  cursor: pointer;
+  border-radius: 0; /* iOS */
+}
+
+::-webkit-slider-runnable-track {
+  background: #ddd;
+}
+
+/*
+* 1. Set to 0 width and remove border for a slider without a thumb
+*/
+::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; /* 1 */
+  height: 40px;
+  background: #fff;
+  box-shadow: -100vw 0 0 100vw dodgerblue;
+  border: 2px solid #999; /* 1 */
+}
+
+::-moz-range-track {
+  height: 40px;
+  background: #ddd;
+}
+
+::-moz-range-thumb {
+  background: #fff;
+  height: 40px;
+  width: 20px;
+  border: 3px solid #999;
+  border-radius: 0 !important;
+  box-shadow: -100vw 0 0 100vw dodgerblue;
+  box-sizing: border-box;
+}
+
+::-ms-fill-lower { 
+  background: dodgerblue;
+}
+
+::-ms-thumb { 
+  background: #fff;
+  border: 2px solid #999;
+  height: 40px;
+  width: 20px;
+  box-sizing: border-box;
+}
+
+::-ms-ticks-after { 
+  display: none; 
+}
+
+::-ms-ticks-before { 
+  display: none; 
+}
+
+::-ms-track { 
+  background: #ddd;
+  color: transparent;
+  height: 40px;
+  border: none;
+}
+
+::-ms-tooltip { 
+  display: none;
+}
