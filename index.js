@@ -6,9 +6,10 @@ window.addEventListener('load', function () {
     var v2 = document.getElementById('v2');
     var v3 = document.getElementById('v3');
     var v4 = document.getElementById('v4');
- 
+    var info = document.getElementById('info');
     var electro = document.getElementById('electro');
     var winddir = document.getElementById('winddir');
+    var getDirection = document.getElementById('windDirection');
     var windSpeed = 2;
     var mass = [];
     var b = 0;
@@ -16,6 +17,7 @@ window.addEventListener('load', function () {
     var intervalID1= null;
     var bladesArray = [v1, v2, v3, v4];
     var stop = document.getElementsByClassName('blades');
+    var windDirection = document.getElementById('windDirection').value;
     function intervalManager(flag, set, time) {
         if (flag)
             intervalID = setInterval(set, time);
@@ -43,6 +45,12 @@ window.addEventListener('load', function () {
         v4.style.animationDuration = 0 + "s";
     }
     var range = document.getElementById('i-range').addEventListener('click', function () {
+        windDirection="North";
+        winddir.innerHTML = "DIRECTION: North"
+        getDirection.value = 0;
+
+        console.log( getDirection);
+        info.innerHTML=''
         function set() {
             energy = energy + ((Math.floor(b * 100) / 100) * 10);
             console.log(energy);
@@ -83,9 +91,8 @@ window.addEventListener('load', function () {
             }
         }
         function energySpend() {
-            
             if (energy >= 1 && energy < 1000) {
-                energy = energy - 1;
+                energy = energy - 2.5;
                 electro.innerHTML='Electricity: on'
                 document.getElementById('energy').innerHTML = `ENERGY:${parseFloat(energy.toFixed(3))} KW*H`;
 
@@ -112,12 +119,12 @@ window.addEventListener('load', function () {
                     document.getElementById('green2').style.visibility = 'hidden';
                     document.getElementById('energy').innerHTML = `ENERGY:1000 KW*H`;
                 }
-                
                     document.getElementById('energy').innerHTML = `ENERGY:${parseFloat(energy.toFixed(3))} KW*H`;
                 
     
             } 
             else if(energy>1000){
+                info.innerHTML="Battery is full."
                 energy=1000;
                 energy = energy - 1;
             }
@@ -223,6 +230,7 @@ window.addEventListener('load', function () {
             bladesArray.forEach(element => {
                 element.style.animationDuration = '0s'
                 intervalManager(false);
+                info.innerHTML='The windmills are stopped...'
             });
         });
         if (windSpeed <= 1.8 && windSpeed >= 0.6) {
@@ -230,13 +238,24 @@ window.addEventListener('load', function () {
             v2.style.animationDuration = windSpeed + "s";
             v3.style.animationDuration = windSpeed + "s";
             v4.style.animationDuration = windSpeed + "s";
+            info.innerHTML = ""
         }
-        else {
+        if(windSpeed<0.6) {
             v1.style.animationDuration = 0 + "s";
             v2.style.animationDuration = 0 + "s";
             v3.style.animationDuration = 0 + "s";
             v4.style.animationDuration = 0 + "s";
             intervalManager(false);
+            info.innerHTML = "The wind is too strong..."
+        }
+        
+        if(windSpeed>1.8){
+            v1.style.animationDuration = 0 + "s";
+            v2.style.animationDuration = 0 + "s";
+            v3.style.animationDuration = 0 + "s";
+            v4.style.animationDuration = 0 + "s";
+            intervalManager(false);
+            info.innerHTML = "Not enough wind power..."
         }
         document.getElementById('on-off').onclick = function () {
             console.log(flag1);

@@ -5,62 +5,46 @@ body {
   padding:5% 0 0 0;
   margin:0;
 }
-
+.windmills{
+  position: absolute;
+  z-index: 10;
+}
 .container {
   position:relative;
   width:1000px;
   margin:0 auto;
-  height:586px;
+
   padding:0;
 }
 
 
-.sign {
-  background:#000;
-  clear:both;
-  color:#fff;
-  text-align:center;
-  padding:2.5em 40px 3.5em;
-  margin:0;
-  height: 240px;
-}
-
-.sign h1 {
-  color:#fff;
-
-  font-size:4em;
-  margin:0;
-  letter-spacing:-0.03em;
-}
-
-.sign p {
-  color:#fff;
-  margin:0;
-  font-size:18px;
-}
-
 .stolby {
   position:absolute;
-  left:200px;
-  top:0;
+  left:110%;
+  top:150px;
   margin-top:18%;
+}
+.st1{
+
+left: 500px;
 }
 
 #v1, #v2, #v3, #v4 {
      animation: 2s motion1 infinite linear;
-   position:absolute;
+    position:absolute;
     top:0;
+    
 }
 
 #v1 {
-  left:377px; 
-  top:3px;
+  left:128%; 
+  top:153px;
 
 }
 
 #v2 {
-    left:45px;
-  top:80px;
+    left:94%;
+  top:230px;
 -moz-transform: scale(0.7) rotate(0deg);
 -webkit-transform: scale(0.7) rotate(0deg);
 -o-transform: scale(0.7) rotate(0deg);
@@ -70,8 +54,8 @@ transform: scale(0.7) rotate(0deg);
 }
 
 #v3 {
-  left:510px;
-  top:180px;
+  left:141%;
+  top:330px;
   -moz-transform: scale(0.5) rotate(0deg);
   -webkit-transform: scale(0.5) rotate(0deg);
   -o-transform: scale(0.5) rotate(0deg);
@@ -82,8 +66,8 @@ transform: scale(0.7) rotate(0deg);
 }
 
 #v4 {
-  left:184px;
-  top:250px;
+  left:108.3%;
+  top:400px;
   -moz-transform: scale(0.3) rotate(0deg);
   -webkit-transform: scale(0.3) rotate(0deg);
   -o-transform: scale(0.3) rotate(0deg);
@@ -162,16 +146,101 @@ transform: scale(0.7) rotate(0deg);
 
 
 .controls {
+  display: flex;
   width:290px;
   height:260px;
   position: absolute;
   border-radius: 3px;
-  top:70%;
-  left:15px;
-  background-color: aliceblue;
-
+  top: -200px;
+  background-color: transparent;
+  border: 3px solid white;
+  border-radius: 20px;
+}
+.controls h1{
+  margin-bottom: 25px;
+}
+#info{
+  position: relative;
+  font-size: 24px;
+  color: #fec93b;
+  top: -230px;
+  left: 80%;
+}
+ button{
+  display: inline-block;
+  margin: 0 auto;
+  background: #339DFF;
+  color: #fff;
+  border: none;
+  font-size: 13px;
+  line-height: 38px;
+  border-radius: 50px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+button:hover{ 
+  background: #fff;
+  color: #339DFF;
+  box-shadow: 0 4px 4px rgba(83, 100, 255, 0.32);
 }
 
+label {
+  position: relative;
+  margin: 0 auto;
+}
+label:after {
+  content: '▼';
+  position: absolute;
+  width: 37px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  right: -8px;
+  bottom: 8px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  pointer-events: none;
+  z-index: 2;
+}
+label:before {
+  content: '';
+  right: 2px;
+  top: 2px;
+  width: 37px;
+  height: 34px;
+  background: #242424;
+  position: absolute;
+  pointer-events: none;
+  display: block;
+  z-index: 1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 50px;
+}
+label select {
+  position: relative;
+  width: 200px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: #339DFF;
+  color: white;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  padding: 10px 9px;
+  margin: 0 auto;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 38px;
+}
 
 
 .loader {
@@ -184,19 +253,6 @@ transform: scale(0.7) rotate(0deg);
   border-radius: 8px;
   float:left;
 }
-
-/* .loader:before {
-content:"";
-width:30px;
-height: 15px;
-background-color:#f1f1f1;
-margin-top:-15px;
-margin-left: 25px;
-border: 0px solid #f1f1f1;
-position:absolute;
-border-top-left-radius: 2px;
-border-top-right-radius: 2px;
-} */
 
 .perc {
 border-radius: 2px;
@@ -241,7 +297,7 @@ background-color:#c1c554;
   visibility: hidden;
 background-color:#97c03c;
 }
-.controls .batteryStats div{
+ .batteryStats {
   font-family:'Open Sans', sans-serif;
   color:#eeab3f;
   font-size:0.7em;
@@ -249,6 +305,7 @@ background-color:#97c03c;
   text-align : center;
   line-height:1.5;
   letter-spacing: 1px;
+  background: rebeccapurple;
 }
 #energy{
 position:absolute;
@@ -285,87 +342,160 @@ margin-left:115px;
   display: flex;
   position: absolute;
   flex-direction: column;
-  border: 1px solid red;
-  top:70%;
-  right: 15px; 
+top: 300px;
+  right: 10%; 
   width:290px;
   height:260px;
-  background-color: white;
+  background:rgba(red, green, blue, alpha);
+  border: 3px solid white;
+  border-radius: 20px;
   opacity: 0.9;
+
+}
+.drop-window h1{
+  text-align: center;
+  color: whitesmoke;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  margin-bottom: 30px;
 
 }
 #i-range{
   direction: rtl;
 }
-input[type="range"] { 
-  margin: auto;
-  -webkit-appearance: none;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 960px) {
+  body {
+    zoom: 0.7;
+  }
+}
+html, body {
+  height: 100%;
+}
+
+@-webkit-keyframes bounce {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+
+@keyframes bounce {
+  from {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+  }
+}
+@-webkit-keyframes sway {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-12px);
+            transform: translateX(-12px);
+  }
+}
+@keyframes sway {
+  from {
+    -webkit-transform: translateX(0px);
+            transform: translateX(0px);
+  }
+  to {
+    -webkit-transform: translateX(-12px);
+            transform: translateX(-12px);
+  }
+}
+body {
+  min-height: 100%;
+  background: -webkit-linear-gradient(top, #152c3e, #37618a);
   position: relative;
-  overflow: hidden;
-  height: 40px;
+}
+body #mountains {
+  z-index: 2;
+  position: absolute;
+  bottom: 20%;
+  margin-bottom: -16px;
+  left: 10%;
+}
+body #cloud1 {
+  z-index: 2;
+  position: absolute;
+  top: 20%;
+  right: 4%;
+  -webkit-animation: bounce 2s ease-in-out 0s infinite alternate;
+          animation: bounce 2s ease-in-out 0s infinite alternate;
+}
+body #cloud2 {
+  z-index: 1;
+  position: absolute;
+  top: 22%;
+  right: 16%;
+  -webkit-animation: bounce 3.5s ease-in-out 2s infinite alternate;
+          animation: bounce 3.5s ease-in-out 2s infinite alternate;
+}
+body .trees {
+  width: 100%;
+  height: 130px;
+  z-index: 4;
+  position: absolute;
+  bottom: 20%;
+  margin-bottom: -100px;
+}
+body #ground {
+  z-index: 1;
+  width: 100%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  background: #879759;
+}
+body #hills {
+  position: absolute;
+  left: 10%;
+  margin-left: -120px;
+  margin-bottom: -86px;
+  bottom: 20%;
+  z-index: 3;
+}
+body #stars {
+  width: 100%;
+  height: 100%;
+}
+/* range inpur */
+
+input[type="range"] {
   width: 200px;
-  cursor: pointer;
-  border-radius: 0; /* iOS */
+  height: 2px;
+  background: aqua;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 
-::-webkit-slider-runnable-track {
-  background: #ddd;
-}
-
-/*
-* 1. Set to 0 width and remove border for a slider without a thumb
-*/
-::-webkit-slider-thumb {
+input[type="range"]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  width: 20px; /* 1 */
-  height: 40px;
-  background: #fff;
-  box-shadow: -100vw 0 0 100vw dodgerblue;
-  border: 2px solid #999; /* 1 */
-}
-
-::-moz-range-track {
-  height: 40px;
-  background: #ddd;
-}
-
-::-moz-range-thumb {
-  background: #fff;
-  height: 40px;
   width: 20px;
-  border: 3px solid #999;
-  border-radius: 0 !important;
-  box-shadow: -100vw 0 0 100vw dodgerblue;
-  box-sizing: border-box;
-}
-
-::-ms-fill-lower { 
-  background: dodgerblue;
-}
-
-::-ms-thumb { 
-  background: #fff;
-  border: 2px solid #999;
-  height: 40px;
-  width: 20px;
-  box-sizing: border-box;
-}
-
-::-ms-ticks-after { 
-  display: none; 
-}
-
-::-ms-ticks-before { 
-  display: none; 
-}
-
-::-ms-track { 
-  background: #ddd;
-  color: transparent;
-  height: 40px;
-  border: none;
-}
-
-::-ms-tooltip { 
-  display: none;
+  height: 20px;
+  border-radius: 100%;
+  background: #434343;
+  position: relative;
+  border: 3px solid aquamarine;
+  z-index: 3;
+  cursor: pointer;
 }
